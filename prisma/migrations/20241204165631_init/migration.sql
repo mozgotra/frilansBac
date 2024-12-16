@@ -1,0 +1,15 @@
+-- CreateTable
+CREATE TABLE "Result" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "summ" INTEGER NOT NULL,
+    "time" INTEGER DEFAULT 0,
+    "published" BOOLEAN DEFAULT false,
+    "userId" INTEGER,
+    CONSTRAINT "Result_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "User" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+);
